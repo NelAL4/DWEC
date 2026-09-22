@@ -1,0 +1,14 @@
+//"declarar/formatear" un objeto sin crearlo (crando una clase):
+
+const alumnos =[
+    {nombre:"Pepe", apellidos:"Romeo Santos", calificacion:7, aprobado:true},
+    {nombre:"Juan",apellidos:"Pérez Soriano", calificacion:5, aprobado:true},
+    {nombre:"mikel", apellidos:"Oyarzabal Ugarte", calificacion:3, aprobado:false} 
+]
+//.map pasa 3 parametros siempre, el primero obligatorio los otros dos opcionales(los pides asignandoles un nombre)
+//    1º parametro: elemento actual del array que recorre
+//    2º parametro: numero de posicion del elemento en que se encuentra (i del bucle for)
+//    3º parametro: array original completo 
+const alumnosId = alumnos.map(function(alumno){ 
+    alumno.id=id++;
+})

@@ -9,9 +9,12 @@ const alumnos =[
 //    1º parametro(alumno): elemento actual del array que recorre
 //    2º parametro(id): úumero de posicion del elemento en que se encuentra (i del bucle for)
 //    3º parametro: array original completo 
-const alumnosId = alumnos.map(function(alumno,id){ 
-    alumno.id=id++;
-})
+const alumnosId = alumnos.map(function(alumno, id) {
+    return {
+        ...alumno,  // Copia todas las propiedades del alumno original
+        id: id + 1  // Añade la nueva propiedad id (ej. 1, 2, 3...)
+    };
+});
 
 const aprobados = alumnos.filter(alumno => alumno.calificacion>=5)
 // const aprobados = alumnos.filter(function(alumno) {

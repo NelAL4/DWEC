@@ -1,0 +1,38 @@
+const estudiante1 = {nombre:"Nahuel", calificacion: 7}
+const estudiante2 = {nombre:"Miguel", calificacion: 2}
+const estudiante3 = {nombre:"Sara", calificacion: 9}
+
+const cursos = [
+   {nombre:"DAW", profesor:"Pepe", alumnos:[
+        {nombre:"Nahuel", calificacion: 7},
+        {nombre:"Miguel", calificacion: 2},
+        {nombre:"Sara", calificacion: 9}
+   ]},
+   {nombre:"DAM", profesor:"Saul", alumnos:[
+        {nombre:"Juan", calificacion:10},
+        {nombre:"Silvia",calificacion:7},
+        {nombre:"Pedro",calificacion:3}
+   ]},
+   {nombre:"AyRI", profesor:"Marcial", alumnos:[
+        {nombre:"Marco", calificacion:6},
+        {nombre:"Mario", calificacion:8},
+        {nombre:"Juanjo", calificacion:6}
+   ]},
+   {nombre:"TCAE", profesor:"Faustino", alumnos:[
+        {nombre:"Alejandra", calificacion:8},
+        {nombre:"Alejandro", calificacion:7},
+        {nombre:"Roberta", calificacion:5}
+   ]}
+]
+
+const resumenCursos = cursos.map(function(curso){
+    const promedio=0;
+    const contador=0;
+    {nombreCurso=cursos.nombre, 
+        alumnos.map(function(alumno){
+            promedio += alumno.calificacion
+            contador++
+          })
+     promedioCalificaciones=promedio/contador
+     }
+})

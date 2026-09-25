@@ -19,20 +19,34 @@ const cursos = [
         {nombre:"Juanjo", calificacion:6}
    ]},
    {nombre:"TCAE", profesor:"Faustino", alumnos:[
-        {nombre:"Alejandra", calificacion:8},
+        {nombre:"Alejandra", calificacion:9},
         {nombre:"Alejandro", calificacion:7},
         {nombre:"Roberta", calificacion:5}
    ]}
 ]
 
 const resumenCursos = cursos.map(function(curso){
-    const promedio=0;
-    const contador=0;
-    {nombreCurso=cursos.nombre, 
-        alumnos.map(function(alumno){
-            promedio += alumno.calificacion
-            contador++
-          })
-     promedioCalificaciones=promedio/contador
-     }
+     let suma=0;
+     curso.alumnos.forEach( function(alumno){
+          suma+=alumno.calificacion
+     });
+     return{
+          nombreCurso:curso.nombre,
+          promedioCalificaciones:suma/curso.alumnos.length
+     };
+})
+
+const cursosDestacados=resumenCursos.filter(curso => curso.promedioCalificaciones >= 7);
+//no hace falta return porque viene incluido en la funcion flecha. Si usase llaves necesitaria incluirlo
+
+cursosDestacados.forEach(function(curso){
+     console.log(`El curso ${curso.nombreCurso} tiene un promedio de ${curso.promedioCalificaciones} y es considerado destacado.`)
+})
+
+cursos.forEach(function(curso){
+     curso.alumnos.forEach(function(alumno){
+          if(alumno.calificacion<4){
+               console.log(`Atención: En el curso ${curso.nombre} hay estudiantes con calificaciones muy bajas."`)
+          }
+     })
 })

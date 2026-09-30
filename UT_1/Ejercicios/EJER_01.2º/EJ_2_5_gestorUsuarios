@@ -1,0 +1,7 @@
+export function crearPerfil(nombre, email, edad){
+    const usuario={
+        nombre:nombre,
+        email:email,
+        edad:edad
+    }
+}

@@ -11,19 +11,19 @@ const cliente = {
 }
 
 // mete el objeto producto
-// const carrito = {
-//     cantidad: 1,
-//     producto 
-// }
-// console.log(carrito)
+const carrito1 = {
+    cantidad: 1,
+    producto 
+}
+console.log(carrito1)
 
 // mete los claves y sus valores
 // MUY IMPORTANTE
-// const carrito = {
-//     cantidad: 1,
-//     ...producto // spread operator
-// }
-// console.log(carrito)
+const carrito2 = {
+    cantidad: 1,
+    ...producto // spread operator
+}
+console.log(carrito2)
 
 //DESTRUCTURANDO DOS OBJETOS
 // const nuevoObjeto = {

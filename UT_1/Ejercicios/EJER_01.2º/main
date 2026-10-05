@@ -1,0 +1,8 @@
+import {crearPerfil as cp, mostrarPerfil} from './EJ_2_5_gestorUsuarios.js';
+
+const usuario = [
+    cp('Noe','Noe@gmail.com',22),//cp es el alias de crearPerfil
+    cp('Imanol','Imanol@gmail.com',63)
+]
+
+usuario.forEach( (usuario)=>console.log(mostrarPerfil(usuario)) )

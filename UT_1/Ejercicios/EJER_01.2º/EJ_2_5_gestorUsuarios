@@ -1,7 +1,23 @@
 export function crearPerfil(nombre, email, edad){
-    const usuario={
-        nombre:nombre,
-        email:email,
-        edad:edad
+    if(typeof nombre==String && typeof email == String && typeof edad == Number){
+        const usuario={
+            nombre:nombre,
+            email:email,
+            edad:edad
+        }
+    } else{
+        console.log("no se ha creado el usuario, datos en formato incorrecto")
     }
 }
+export default function mostrarPerfil({nombre, email,edad}){
+    const perfil=(`Nombre = ${nombre} | Email = ${email} | Edad = ${edad}`)
+    return perfil;
+}
+/*
+
+const mostrarPerfil = function({nombre, email,edad}){
+    const perfil=(`Nombre = ${nombre} | Email = ${email} | Edad = ${edad}`)
+    return perfil;
+}
+export default mostrarPerfil
+*/

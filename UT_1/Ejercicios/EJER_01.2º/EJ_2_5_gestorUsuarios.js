@@ -31,7 +31,10 @@ export function obtenerMayoresDeEdad(usuarios){
 } 
 
 //.reduce -> funcion que devuelve un unico valor a partir de una array
-export function calcularPromedioEdad(usuarios,promedio=0){usuarios.reduce((acumulador,usuario)=>{
-
-},0) //0 es el valor inicial del acumulador (es opcional pero recomendado, puede ser un valor vacio)
+export function calcularPromedioEdad(usuarios){
+if (!usuarios||usuarios.length === 0) return 0; //no hace falta else porque en return acaba la funcion
+const sumaTotal = usuarios.reduce((acumulador,usuario)=>{
+        return acumulador + usuario.edad; //el acumulador siempre debe returnearse para ser utilizado en la siguiente iteracion
+    },0) //0 es el valor inicial del acumulador (es opcional pero recomendado, puede ser un valor vacio) se debe poner al final
+return sumaTotal/usuarios.length;
 }

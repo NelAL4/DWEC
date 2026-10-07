@@ -1,6 +1,10 @@
 //import {crearPerfil as cp, mostrarPerfil} from './EJ_2_5_gestorUsuarios.js'; -> erroneo
 
-import mostrarPerfil, { crearPerfil as cp, esMayorDeEdad, calcularPromedioEdad, obtenerMayoresDeEdad } from './EJ_2_5_gestorUsuarios.js';
+import mostrarPerfil, { crearPerfil as cp,
+                        esMayorDeEdad,
+                        calcularPromedioEdad,
+                        obtenerMayoresDeEdad 
+                    } from './EJ_5_gestorUsuarios.js';
 //mostrarPerfil se importa fuera de las llaves porque es default
 const usuarios = [
     cp('Noe','Noe@gmail.com',22),//cp es el alias de crearPerfil

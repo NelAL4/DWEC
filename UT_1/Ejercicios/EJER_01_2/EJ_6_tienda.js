@@ -3,7 +3,7 @@ import resumenInventario,{crearProducto as cp,
                         listarProductosAgotados as lpa, 
                         calcularValorTotalInventario as cvti,
                         mostrarProductos as mp
-                        } from "./EJ_2_6_inventario.js";
+                        } from "./EJ_6_inventario.js";
 
 const inventario = [
     cp("Monitores mk2", "periférico", 399.99, 7),

@@ -94,3 +94,14 @@ const libros = [
 
 export const agregarLibro = (nuevoLibro)=>{libros.push(nuevoLibro)}
 export const obtenerLibros = () => libros
+export const buscarLibro = (id)=>libros.find(libro=>libro.id===id)
+export const eliminarLibro = (id)=>{
+  const indice = libros.findIndex((libro)=>libro.id===id);
+  if (indice !== -1){libros.splice(indice,1)};
+}
+//findindex devuelve -1 si no encuentra nada por lo q splice borraria el ultimo elemento del array
+export const calcularTotalPaginas = () => {return libros.reduce((retornador, libro)=> retornador + libro.paginas, 0)};
+
+export const ordenarPorPaginas = ()=>{return libros.sort((a, b) => a.paginas - b.paginas )};
+export const hayLibrosLargos = (limitePaginas) =>{return libros.some((libro)=>libro.paginas>limitePaginas)}
+export const sonTodosLibrosCortos = (limitePaginas)=>{return libros.every((libro)=>libro.paginas<limitePaginas)}

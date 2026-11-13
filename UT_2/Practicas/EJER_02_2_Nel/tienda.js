@@ -28,24 +28,31 @@ export const crearCatalogo = (matriz) => {
 //     formato matriz) añadidas al final.
 export const ampliarCatalogo = (catalogo, matrizNovedades) => {
   //return catalogo.concat(matrizNovedades); //crearia un array de objetos(catalogo) + listas(matrizNovedades)
-  
+  return catalogo.concat(crearCatalogo(matrizNovedades));
 };
 
 // 1.3 Devuelve los nombres de todos los productos en orden
 //     alfabético, respetando las tildes ('Vinilo Ópera' va tras 'Vinilo Jazz').
 export const nombresOrdenados = (catalogo) => {
-  // Tu código aquí
+  //los catalogos son arrays de objetos, quiero devolver un array de sus nombres ordenados
+  
+  return catalogo.map(elemento => elemento.nombre).sort((a,b) => a.localeCompare(b))
 };
 
 // 1.4 Devuelve una COPIA del catálogo ordenada por precio,
 //     de menor a mayor o, si descendente es true, de mayor a menor.
 export const ordenarPorPrecio = (catalogo, descendente = false) => {
-  // Tu código aquí
+  
+  const catalogoPorPrecio = [...catalogo].sort((a,b)=>a.precio-b.precio);
+  if (descendente===true){
+    return catalogoPorPrecio.reverse();
+  } 
+  return catalogoPorPrecio;
 };
 
 // 1.5 Devuelve los nombres de los tres productos más baratos.
 export const tresMasBaratos = (catalogo) => {
-  // Tu código aquí
+  return ordenarPorPrecio(catalogo, false).slice(0,3).map(elemento => elemento.nombre)
 };
 
 // ================================================================
@@ -55,29 +62,29 @@ export const tresMasBaratos = (catalogo) => {
 // 2.1 Devuelve el producto con ese nombre, sin distinguir mayúsculas
 //     y minúsculas, o undefined si no existe.
 export const buscarProducto = (catalogo, nombre) => {
-  // Tu código aquí
+  return catalogo.find(elemento => elemento.nombre.toLowerCase() === nombre.toLowerCase())
 };
 
 // 2.2 Devuelve true si existe un producto con ese nombre.
 //     Obligatorio: usa includes.
 export const existeProducto = (catalogo, nombre) => {
-  // Tu código aquí
+  return catalogo.map(elemento => elemento.nombre.toLowerCase()).includes(nombre.toLowerCase());
 };
 
 // 2.3 Devuelve la posición del producto en el catálogo, o -1.
 export const posicionProducto = (catalogo, nombre) => {
-  // Tu código aquí
+  return catalogo.findIndex(elemento => nombre.toLowerCase()===elemento.nombre.toLowerCase())
 };
 
 // 2.4 Devuelve un array con los NOMBRES de los productos sin stock.
 export const agotados = (catalogo) => {
-  // Tu código aquí
+  return catalogo.filter(elemento => elemento.stock === 0).map(elemento => elemento.nombre)
 };
 
 // 2.5 Devuelve los productos con precio entre minimo y maximo
 //     (ambos incluidos).
 export const productosEntre = (catalogo, minimo, maximo) => {
-  // Tu código aquí
+  return catalogo.filter(elemento => elemento.precio >= minimo && elemento.precio <= maximo) 
 };
 
 // ================================================================
@@ -86,18 +93,22 @@ export const productosEntre = (catalogo, minimo, maximo) => {
 
 // 3.1 Valor total del almacén: suma de precio × stock.
 export const valorAlmacen = (catalogo) => {
-  // Tu código aquí
+  return catalogo.reduce((acumulador, elemento) => acumulador+(elemento.precio * elemento.stock),0)
 };
 
 // 3.2 Devuelve el producto (el objeto completo) más caro.
 export const productoMasCaro = (catalogo) => {
-  // Tu código aquí
+  return catalogo.reduce((acumulador,elemento) => acumulador.precio > elemento.precio ? acumulador : elemento,
+  catalogo[0])
 };
 
 // 3.3 Devuelve un objeto con las unidades en stock de cada categoría:
 //     { equipos: 7, accesorios: 29, discos: 14 }
 export const unidadesPorCategoria = (catalogo) => {
-  // Tu código aquí
+  return catalogo.reduce(
+    (acumulador, elemento)=> acumulador[elemento.categoria] = (acumulador[elemento.categoria]?0): 
+    ,{}
+  )
 };
 
 // 3.4 Devuelve true si hay AL MENOS un producto agotado.

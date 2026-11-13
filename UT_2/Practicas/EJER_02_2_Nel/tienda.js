@@ -106,8 +106,16 @@ export const productoMasCaro = (catalogo) => {
 //     { equipos: 7, accesorios: 29, discos: 14 }
 export const unidadesPorCategoria = (catalogo) => {
   return catalogo.reduce(
-    (acumulador, elemento)=> acumulador[elemento.categoria] = (acumulador[elemento.categoria]?0): 
-    ,{}
+    //                          se ejecuta primero la parte de la derecha del "=" (la operacion)
+    (acumulador, elemento)=> {
+      acumulador[elemento.categoria] = (acumulador[elemento.categoria]??0)+elemento.stock
+    //                       (clave:valor)esta sentencia busca el valor(que sera un núm) de la clave categoria
+    //                      , si no exista aun la clave devolveria undefined, por tanto le asigno 0 para hacer la suma
+    //                        despues de hacer la operacion se asigna la clave (parte a la izq del "=") 
+      return acumulador ,{}
+//    return acumulador[elemento.categoria] -> devuelve el valor de esa clave concreta
+//    return acumulador                     -> devuelve el objeto completo
+    }
   )
 };
 

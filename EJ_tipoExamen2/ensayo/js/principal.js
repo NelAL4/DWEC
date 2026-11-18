@@ -330,6 +330,7 @@ const agruparPorEstado = (lista) => {
     encurso: [],
     hecha: []
   };
+  
 
   // forEach recorre sin devolver nada (úsalo cuando haces algo por cada
   // elemento, no cuando quieres un array resultante).
@@ -460,6 +461,15 @@ const crearTarjeta = (tarea) => {
 //   reemplaza por esos nodos. Es la forma moderna de "vaciar" un elemento
 //   (alternativa a innerHTML = '').
 // ------------------------------------------------------------
+/*
+const agruparPorEstado = (lista) => {
+  const grupos = {
+    porhacer: [],
+    encurso: [],
+    hecha: []
+  };
+  const ESTADOS = ['porhacer', 'encurso', 'hecha'];
+*/
 const pintarTablero = (lista) => {
   const grupos = agruparPorEstado(lista);
 

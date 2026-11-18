@@ -1,0 +1,1 @@
+document.querySelector("#btn-info-premium").addEventListener('click', ()=>alert("Accediendo a informacion exclusiva para miembros premium"))

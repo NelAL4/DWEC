@@ -1,0 +1,2 @@
+document.querySelector(".card:nth-child(1) img").setAttribute("src","img/hacer4.jpg")
+//selecciona dentro del primer card, la img (no hay que especificar cual porque solo hay una). Luego cambia el valor del atributo a la nueva ruta

@@ -9,8 +9,8 @@
 /*
 Los botones + y − suman y restan 1 al valor; Reiniciar lo pone a 0. El valor se pone en rojo si es negativo.
 */
-const sumar = dosument.querySelector(".boton-sumar")
-const restar = dosument.querySelector(".boton-restar")
+const sumar = document.querySelector(".boton-sumar")
+const restar = document.querySelector(".boton-restar")
 const valor = document.querySelector()
 document.addEventListener('click', (sumar)=>)
 
